@@ -17,3 +17,15 @@ matrix:
   allow_failures:
     - go: master
 
+deploy:
+  - provider: script
+    script:
+      - cd ./ci
+      - ./deploy-prod.sh
+    on:
+      all_branches: true
+      condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+
+#  - provider: script
+#    script: ./deploy-test.sh
+#    on:
+#      branch: master
