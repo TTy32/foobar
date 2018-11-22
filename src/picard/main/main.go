@@ -21,5 +21,6 @@ func (p Payload) Validate() error {
 
 func main() {
     fmt.Println("Hello")
+    fmt.Println("Hello2")
 }
 
